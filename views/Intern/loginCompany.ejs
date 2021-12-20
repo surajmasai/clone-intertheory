@@ -1,0 +1,158 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | Intern Theory</title>
+    <link rel="stylesheet" href="/css/loginform.css" />
+    <link rel="stylesheet" href="/css/temp.css">
+    <link rel="stylesheet" href="/css/navbar.css">
+    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    
+    
+    <style>
+    
+    #companybutton{
+            border-bottom: 2px solid rgb(9, 124, 226);
+        }
+
+      
+    </style>
+</head>
+
+<body>
+    <div id="nn123">
+    </div>
+    
+    <form action="/login" method="post" enctype="multipart/form-data" onsubmit=""> 
+        <div class="login">
+            <div class="inner-box">
+                <div class="buttons">
+                    <div id='studentbutton'>
+                        <button ><a href="/login/new">Student</a></button>
+                    </div>
+                    <div id='companybutton'>
+                    <button ><a href="/login/company/new">Company</a></button>
+                    </div>
+                </div>
+                <div>
+                    <h2 id='loginh2'>Login</h2>
+        
+                </div>
+                <div class='loginpara'>
+                    <p>If you are a student looking for internships, please login as a student by clicking <a
+                            href="/login/new">here</a>
+                    </p>
+                </div>
+                <div class="fbGoogle bg-icon-color1">
+                    <a href="">
+                        <span>
+                            <img id='iconImg' class="iconImg"
+                                src="https://www.interntheory.com/assets/iconsLogos/linkedin.svg" height="25">
+                            <span id='span' style="margin-left: 20%;">SIGNIN WITH LINKEDIN</span>
+                        </span>
+                    </a>
+                </div>
+               
+                <div class="or">
+                    <h5>OR</h5>
+                </div>
+                <div>
+                    <form  class="form"action="/login" method="post" enctype="multipart/form-data">
+                        <!-- <label for="email">Email/Number</label> -->
+                        <input class="loginInputs" aria-invalid="false" type="text"  name="email" placeholder="Email/Number*" id="email" required />
+                        <!-- <label for="password">Password</label> -->
+                        <input class="loginInputs" type="password" placeholder="Password*" name="password" id="password" required />
+                        <div class="not_account">
+                        <p>
+                            Don't have an account?
+                            <span><a href="/register/company/new">Create your account</a></span>
+                            <!-- <span class="color_blue" onclick="create_account()">Create your account</span> -->
+                        </p>
+                    </div>
+                    <button  type="submit" id="login_btn" class="login_btn">LOGIN</button>
+                    </form>
+                </div>
+              
+            </div>
+        </div>`
+    </form>
+    <div id="loginformstr"></div>
+
+    <div id="footer">
+        <%- include('../partials/footer') %>
+    </div>
+</body>
+
+</html>
+
+
+   
+<script type="module">
+
+    let user_info = JSON.parse(localStorage.getItem("user_info1"))
+    
+    import  {n12345,nbar12345 , afterLogout}  from '/js/navbar.js'
+    
+
+    if (user_info === null ) {
+        document.getElementById('nn123').innerHTML = nbar12345();
+    }
+    
+    else {
+    
+        document.getElementById('nn123').innerHTML = n12345(user_info.userid);
+    
+        let name = document.getElementById('name');
+            name.innerText = user_info.userfir + " " +user_info.userlast;
+    
+            let mail = document.getElementById('mail');
+            mail.innerText = user_info.useremail;
+            
+            let phno = document.getElementById('phno');
+            phno.innerHTML= user_info.usermobile;
+
+            let profile_img1 = document.getElementById('profile_img1');
+            let profile_img2 = document.getElementById('profile_img2');
+    
+    
+            afterLogout();
+            
+            if(user_info.usergen === "Male"){
+                profile_img1.src ="https://assets.interntheory.com/creative/default-images/guyProfile.jpg";
+                profile_img2.src ="https://assets.interntheory.com/creative/default-images/guyProfile.jpg";
+             }
+            else{
+                profile_img1.src ="https://assets.interntheory.com/creative/default-images/girlProfile.jpg";
+                profile_img2.src = "https://assets.interntheory.com/creative/default-images/girlProfile.jpg";
+            }
+    
+    
+    }
+    
+    
+    $('.btn').click(function () {
+            $(this).toggleClass("click");
+            $('.sidebar').toggleClass("show");
+        });
+    
+        $('.feat-btn').click(function () {
+            $('nav ul .feat-show').toggleClass("show");
+        });
+        $('.feat1-btn').click(function () {
+            $('nav ul .feat1-show').toggleClass("show1");
+        });
+        $('.feat2-btn').click(function () {
+            $('nav ul .feat2-show').toggleClass("show2");
+        });
+    
+    </script>
+    
+

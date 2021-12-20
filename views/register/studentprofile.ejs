@@ -1,0 +1,1160 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    
+    <script src="https://kit.fontawesome.com/6716631a00.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <link rel="stylesheet" href="/css/temp.css">
+       <style>
+  #localStor{
+       display: none;
+           }
+  #box{
+      width:90%;
+      height: 1500px;
+      margin: auto;
+     
+      
+      display:flex;
+      gap:1%;
+      margin-top:80px;
+     margin-bottom: 100px;
+  }
+   
+  input{
+      outline: none;
+  }
+ 
+   #leftpicbox{
+       width:30%;
+       height: 400px;
+      
+       box-shadow: 0px 3px 4px 5px rgb(0 0 0 / 22%);
+
+   }
+
+   #rightdetailbox{
+       width:68%;
+       height: 1400px;
+       box-shadow: 0px 3px 3px 3px rgb(0 0 0 / 22%);
+      padding:30px;
+      background-color: #fff;
+   }
+
+  #update_personal_details{
+     width: 500px;
+     height: 500px;
+     overflow: scroll;
+      padding: 20px 30px;
+     
+     font-size:15px;
+     z-index: 50;
+    background-color:#fff;
+    box-shadow:0px 11px 15px -7px rgb(0 0 0 / 20%), 0px 24px 38px 3px rgb(0 0 0 / 14%), 0px 9px 46px 8px rgb(0 0 0 / 12%);
+
+     visibility:hidden; 
+    position: absolute;
+    top: 100px;
+    left:30%;
+
+  }
+   #update_personal_details label{
+  font-size:16px;
+
+   }
+   #update_personal_details input{
+       width:80%;
+       margin:10px auto;
+       padding: 10px;
+       border: none;
+       outline: none;
+       border-bottom: 2px solid black;
+   }
+  #update_personal_details select{
+      
+      width: 400px;
+      padding: 10px;
+      border: none;
+      border-bottom: 2px solid black;
+      margin-bottom: 10px;
+  }
+  textarea{
+      width: 80%;
+      padding:10px;
+  }
+  #update_personal_details button{
+      background-color:#DF1E2E;
+      color: white;
+      margin-left: 30%;
+      padding:6px 16px;
+      font-size:0.875rem;
+      margin-right: 5%;
+      margin-top: 10%;
+      cursor: pointer;
+      border-radius: 4px;
+  }
+    #update_personal_details button:hover{
+        background-color:#97141f
+    }
+     #update_personal_details a{
+         text-decoration:none;
+         color: #087CDD;
+         cursor: pointer;
+         font-size:0.875rem;
+         text-transform: uppercase;
+     }
+
+
+
+
+      #update_personal_details a:hover{
+          background-color:#aedbff;
+          padding: 10px;
+          border-radius: 4px;
+      }
+      #update_personal_details h1{
+          font-size:16px;
+          line-height:20px;
+          font-weight: 500;
+          color: #3C4858;
+          font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+          display: block;
+      }
+      /* update address css from here*/
+  #update_address{
+      width: 500px;
+      height: 400px;
+      overflow: hidden;
+      visibility: hidden;
+      padding: 20px 30px;
+    box-shadow:   0px 11px 15px -7px rgb(0 0 0 / 20%), 0px 24px 38px 3px rgb(0 0 0 / 14%), 0px 9px 46px 8px rgb(0 0 0 / 12%);
+      outline: none;
+     position:absolute;
+     top: 700px;
+     left:30%;
+     font-size:15px;
+     z-index: 50;
+   background-color:#fff;
+
+  }
+    #update_address h1{
+        font-size:16px;
+          line-height:20px;
+          font-weight: 500;
+          color: #3C4858;
+          font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+          display: block;
+
+    }
+
+    #update_address input{
+        width:80%;
+        outline:none;
+       margin:10px auto;
+       padding: 10px;
+       border: none;
+       border-bottom: 2px solid black;
+    }
+  #update_address label{
+      font-size: 16px;
+  }
+
+  #update_address select{
+      
+      width: 400px;
+      padding: 10px;
+      border: none;
+      border-bottom: 2px solid black;
+      margin-bottom: 10px;
+  }
+
+
+  #update_address button{
+      background-color:#DF1E2E;
+      color: white;
+      margin-left: 30%;
+      padding:6px 16px;
+      font-size:0.875rem;
+      margin-right: 5%;
+      margin-top: 10%;
+      cursor: pointer;
+      border-radius: 4px;
+  }
+    #update_address button:hover{
+        background-color:#97141f
+    }
+     #update_address a{
+         text-decoration:none;
+         color: #087CDD;
+         cursor: pointer;
+         font-size:0.875rem;
+         text-transform: uppercase;
+     }
+#update_address a:hover{
+    background-color:#aedbff;
+          padding: 10px;
+          border-radius: 4px;
+}
+
+
+
+  #add_Education{
+    width: 500px;
+      height: 400px;
+      overflow: hidden;
+   position: absolute;
+   top: 1200px;
+   left:30%;
+      padding: 20px 30px;
+     box-shadow: 0px 11px 15px -7px rgb(0 0 0 / 20%), 0px 24px 38px 3px rgb(0 0 0 / 14%), 0px 9px 46px 8px rgb(0 0 0 / 12%);
+
+     font-size:15px;
+     z-index: 50;
+   background-color:#fff;
+     visibility:hidden; 
+  }
+
+    #add_Education h1{
+        font-size:16px;
+          line-height:20px;
+          font-weight: 500;
+          color: #3C4858;
+          font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+          display: block;
+
+    }
+  #add_Education input{
+        width:80%;
+       margin:10px auto;
+       padding: 10px;
+       outline: none;
+       border: none;
+       border-bottom: 2px solid black;
+    }
+
+    #add_Education label{
+      font-size: 16px;
+  }
+
+  #add_Education select{
+      
+      width: 400px;
+      padding: 10px;
+      border: none;
+      border-bottom: 2px solid black;
+      margin-bottom: 10px;
+  }
+
+
+  #add_Education button{
+      background-color:#DF1E2E;
+      color: white;
+      margin-left: 30%;
+      padding:6px 16px;
+      font-size:0.875rem;
+      margin-right: 5%;
+      margin-top: 10%;
+      cursor: pointer;
+      border-radius: 4px;
+  }
+    #add_Education button:hover{
+        background-color:#97141f
+    }
+     #add_Education a{
+         text-decoration:none;
+         color: #087CDD;
+         cursor: pointer;
+         font-size:0.875rem;
+         text-transform: uppercase;
+     }
+
+     #add_Education a:hover{
+        background-color:#aedbff;
+          padding: 10px;
+          border-radius: 4px;
+     }
+   #updiv{
+       height:50%;
+       width:50%;
+      justify-content:center;
+      padding-left: 10%;
+        text-align: center;
+      
+      margin: auto;
+        margin-bottom: 5%;
+       
+   }
+ #updiv img{
+    width:100px;
+    height:100px;
+ }
+   #updiv button{
+       background-color: #087CDD;
+       color: white;
+       margin: 15px;
+       font-size:13px;
+       padding:4px 8px;
+       margin-bottom:8px;
+       box-shadow: 5px;
+       box-sizing: border-box;
+       border-radius:5px;
+
+   }
+   #updiv button:hover {
+    background-color: #829cb1;
+   }
+  #updiv p{
+       color:#999; font-size: 14px; font-weight: 400;
+       font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    font-weight: 400;
+    line-height: 1.75;
+    letter-spacing: 0.00938em;
+    display: block;
+    padding-bottom: 7px;
+    border-bottom: 1px solid black;
+  }
+
+  #dndiv{
+       margin-top:5%;
+
+  }
+  #dndiv p{
+      color: #3C4858;
+      font-size: 14px;
+      line-height:21px;
+      letter-spacing:0.14994px;
+      margin: 0 ;
+      padding:10px 30px ;
+      font-weight:400;
+      font-style: normal;
+  }
+
+#d1{
+    width:90% ;
+    height:120px;
+   
+    margin: auto;
+    display: flex;
+    margin-left:5px;
+    padding: 3%;
+    border-bottom:1px dashed gray;
+}
+#imdv{
+    width:20%;
+    height:130px;
+}
+#imdv img{
+    width:100%;
+    height:100%;
+    
+}
+#txdv{
+    width:78%;
+    height:150px;
+    margin-left: 2%;
+    padding: 3%;
+   
+}
+ #txdv p{
+     color:rgb(60,72,88);
+     font-size: 16px;
+     line-height:20px;
+     margin: 0;
+     padding: 0;
+     font-weight: 500;
+     margin-bottom:2%;
+ }
+#btndv{
+    display: flex;
+    
+}
+#btndv1{
+    width:70%;
+  
+   
+}
+  #btndv1 span{
+      margin-right: 20px;
+      padding: 10px;
+  }
+  #btndv1 span:nth-child(1){
+      background-color:#087CDD;
+      color: white;
+      padding: 6px 10px;
+      font-size:13px;
+      line-height:22.75px;
+      font-weight:500;
+      cursor: pointer;
+      border-radius: 4px;
+  }
+   #btndv1 span:nth-child(1):hover{
+       background-color:rgb(5,86,154);
+
+   }
+   #btndv1 span:nth-child(2){
+      
+      
+      color: rgb(223,30,46);
+      padding: 6px 10px;
+      font-size:13px;
+      line-height:22.75px;
+      font-weight:500;
+      cursor: pointer;
+      border:1px solid rgba(223,30,46,0.5);
+      font-size:13px;
+      padding:4px 8px;
+      font-weight:500;
+      text-transform: uppercase;
+      cursor: pointer;
+      border-radius:4px;
+  }
+   #btndv1 span:nth-child(2):hover{
+       background-color:rgba(223,30,46,0.08);
+      
+     
+   }
+  #btndv2 span{
+      color: rgb(8,124,221);
+     margin-left: -1px;
+      font-size: 13px;
+      border: 1px solid rgba(8, 124, 221, 0.5);
+      padding: 4px 8px;
+      text-align: -webkit-right;
+      cursor: pointer;
+      border-radius: 4px;
+  }
+  #btndv2 span:hover{
+      background-color:#bfdbf1;
+  }
+
+  #d2{
+      height: 400px;
+      width:100%;
+    
+      border-bottom: 1px dashed gray;
+  }
+    #upprsn{
+        float: right;
+        position: relative;
+         top:10px;
+        right:30px;
+        background-color:#087CDD;
+        padding: 5px;
+        color: white;
+        border-radius: 50%;
+    }
+
+  #d2 h5{
+      color: #3C4858;
+      font-size:25px;
+      line-height:20px;
+      padding:0px 0px 0px ;
+      font-weight: 100;
+      margin-left: 20px;
+      
+  }
+    .dtl{
+        width:90%;
+        margin:10px ;
+        display: flex;
+      line-height:22px;
+        font-size:16px;
+        font-weight:500;
+       
+    }
+    .dtl div:nth-child(1){
+     width:30%;
+     text-align: left;
+     font-weight: 800;
+     padding: 4px;
+     font-style: normal;
+     font-size: 14px;
+     line-height:10px;
+     text-decoration:none solid rgba(0, 0, 0, 0.87) ;
+ }
+
+ .dtl div:nth-child(2){
+     width:60%;
+     text-align: left;
+    font-weight:100;
+    padding:4px;
+   
+    font-size:14px;
+    line-height:21px;
+
+ }
+  
+     #d3{
+         width:90%;
+         height: 250px;
+         margin:  auto;
+         border-bottom: 1px dashed gray;
+     }
+
+       #d3 h3{
+        color: #3C4858;
+      font-size:16px;
+      line-height:20px;
+     
+
+      padding:0px 0px 5px ;
+      font-weight: 100;
+      margin-left: 20px;
+       }
+       #d4{
+           width:90%;
+           height: 200px;
+           margin: auto;
+           border-bottom: 1px dashed gray;
+       }
+       #d4 h5{
+        color: #3C4858;
+      font-size:16px;
+      line-height:20px;
+      padding:0px 0px 10px ;
+      font-weight: 100;
+      margin-left: 20px;
+       }
+       #upadrs{
+           float: right;
+           position: relative;
+           top:10px;right:20px;
+           background-color:#087CDD;
+           padding: 5px;
+           color: white;
+           border-radius: 50%;
+       }
+         #d5{
+             width:50%;
+             height: 250px;
+             margin-top:50px;
+             border-right: 2px solid red !important;
+           border-top: 1px solid gray;
+           border-bottom: 1px solid gray;
+           padding:10px;
+         }
+         #d5 h5{
+            color: #3C4858;
+      font-size:16px;
+      line-height:20px;
+      padding:0px 0px 10px ;
+      font-weight: 100;
+      margin-left: 20px;
+         }
+         #d5 p{
+             margin: 0;
+             padding: 0;
+         }
+           #aded{
+               float: right;
+               color: white;
+               background-color:#087CDD;
+               padding: 5px;
+               border-radius: 50%;
+           }
+    
+      #gac div{
+          background-color:#e0e0e0;
+          display: flex;
+          width:250px;
+          height:30px;
+          border-radius: 15px;
+      }
+  #gac div img{
+      width:20px; height:20px;
+      padding:5px;
+  }
+   #gac div p{
+       font-size:13px;
+       padding: 0px 12px;
+       font-weight: 400;
+       color:rgba(0,0,0,0.87);
+   }
+  #fbac div p{
+    font-size:13px;
+       padding: 0px 12px;
+       font-weight: 400;
+       color:rgba(0,0,0,0.87);
+  }
+
+  #fbac div{
+          background-color:#e0e0e0;
+          display: flex;
+          width:250px;
+          height:30px;
+          border-radius: 15px;
+      }
+   #fbac div img{
+    width:20px; height:20px;
+      padding:5px;
+   }
+
+
+
+       </style>
+
+</head>
+<body>
+    <div id="localStor">
+        <p id="userid"><%= user._id %></p>
+        <p id="usergen"><%= user.gender %></p>
+        <p id="userfir"><%= user.first_Name %></p>
+        <p id="userlast"><%= user.last_name %></p>
+        <p id="useremail"><%= user.email %></p>
+        <p id="usermobile"><%= user.mobile %></p>
+    </div>
+   
+    <div id="nn123">
+    </div>
+      <div id="box">
+        <div id="leftpicbox">
+
+        </div>
+      
+        <div id="rightdetailbox">
+
+            <div id="d1"></div>
+
+            <div id="d2">
+                <span id=upprsn>
+                    <i class="fas fa-pen-square"></i>
+                </span>
+
+                <h5>Personal Details</h5>
+  
+                 <div class="dtl">
+                     <div>Name</div>
+           
+                     <div id="n"><%= user.first_Name +" " +user.last_name %></div>  
+                 </div>
+
+              <div class="dtl">
+                  <div>Gender</div>
+                  <div id="g"><%=user.gender%></div>
+              </div>
+
+               <div class="dtl">
+                   <div>DOB</div>
+                   <div id="d"><%=user.dob%></div>
+               </div>
+
+               <div class="dtl">
+                   <div>Languages</div>
+                   <div id="l"><%=user.language%></div>
+               </div>
+
+               <div class="dtl">
+                   <div>Hobbies</div>
+                   <div id="h"><%=user.hobby%></div>
+               </div>
+
+               <div class="dtl">
+                   <div>Achievements</div>
+                   <div id="a"><%=user.achivement%></div>
+               </div>
+
+   <div class="dtl">
+       <div>Skills</div>
+       <div id="s"><%=user.skill%></div>
+   </div>
+
+    <div class="dtl">
+        <div>Preferences</div>
+        <div id="p"><%=user.preference%></div>
+    </div>
+
+           <div class="dtl">
+               <div>About</div>
+               <div id="ab"><%=user.about%></div>
+           </div>
+
+
+        </div>
+  
+
+       
+    
+    
+
+    <div id="d3">
+       
+  <h3>Contact Details</h3>
+  <div  class="dtl">
+      <div>Email ID</div>
+      <div id="mail"><%=user.email%></div>
+  </div>
+
+    <div  class="dtl">
+        <div>Mobile Number</div>
+        <div id="no"><%=user.mobile%></div>
+    </div>
+
+     <div  class="dtl">
+         <div>Facebook Account</div>
+         <div id="fbac"><%=user.fb%></div>
+     </div>
+
+     <div  class="dtl">
+         <div>Google Account</div>
+         <div id="gac"><%=user.google%></div>
+     </div>
+
+</div>
+
+    
+<div id="d4">
+    <span id=upadrs>
+        <i class="fas fa-pen-square"></i>
+    </span>
+     <h5>Address Details</h5>
+     <div class="dtl">
+         <div>Address</div>
+         <div id="ad"><%= user.address%></div>
+     </div>
+     <div class="dtl">
+         <div>City</div>
+         <div id="ct"><%=user.city%></div>
+     </div>
+     <div class="dtl">
+         <div>State</div>
+         <div id="st"><%=user.state%></div>
+     </div>
+     <div class="dtl">
+         <div>Pincode</div>
+         <div id="pn"><%= user.pin%></div>
+     </div>
+
+</div>
+
+
+  <div id="d5">
+    <span id="aded">
+        <i class="fa fa-plus" aria-hidden="true"></i>
+    </span>
+
+      <h5>Educational Details</h5>
+        <p><%=user.leveledu%></p>
+        <p><%=user.institute%></p>
+        <p><%=user.degree%></p>
+        <p><%=user.selyear%></p>
+  </div>
+
+
+
+    </div>
+    
+    </div>
+     
+
+
+
+
+
+ 
+  <div id="update_personal_details">
+      <form href="" onsubmit="studentUpdate(event,`<%=user._id %>`)" >
+    <h1>Update Personal Details</h1>
+    <input type="text" placeholder=" Enter Your First Name*" id="fname" name="first_name"><br>
+    <input type="text" placeholder=" Enter Your Last Name*" id="lname" name="last_name"><br>
+        <select id="gender" placeholder="Gender*" name="Gender">
+           <option value="Male">Male</option>
+           <option value="Female">Female</option>
+           <option value="Others">Others</option>
+       </select><br>
+       <label>Date of Birth*</label><br>
+      <input type="date" placeholder="Date of Birth*"id="date" name="DOB"><br>
+      <select id="lang" name="Languages"><br>
+        
+          <option value="Hindi">Hindi</option>
+          <option value="English">English</option>
+          <option value="German">German</option>
+          <option value="Spansih">Spanish</option>
+          <option value="Marathi">Marathi</option>
+          <option value="French">French</option>
+          <option value="Chinese">Chinese</option>
+         
+      </select><br>
+  <input type="text" placeholder="hobbies" id="hobby" name="Hobbies"><br>
+     <input type="text" placeholder="Achievements" id="achiev" name="Achievements"><br>
+
+       <select id="skill" placeholder="Skills*" name="Skills" >
+          
+           <option value="Digital Marketing">Digital Marketing</option>
+           <option value="consulting">Consulting</option>
+           <option value="Animation">Animation</option>
+           <option value="Engineering">Engineering</option>
+           <option value="Finance">Finance</option>
+       </select><br>
+
+  <select id="pref" name="Preferences">
+     
+      <option value="Animation">Animation</option>
+      <option value="Web design">Web design</option>
+      <option value="Content writing">Content writing</option>
+      <option value="Social Media">Social Media</option>
+      <option value="Event Management">Event Management</option>
+  </select><br>
+     <label>About</label><br>
+  <textarea row="5" col="20" id="des" name="About" placeholder="write a few lines that best describe you">
+
+  </textarea> 
+
+     <div>
+         <button type="submit">UPDATE</button>
+         <a href="">Cancel</a>
+     </div>
+    
+  </form>
+  </div>
+
+
+
+
+
+
+
+
+
+
+  <div id="update_address" >
+    <h1>Address </h1>
+     <form action="" onsubmit="updateStudentAddress(event,`<%=user._id %>`)">
+        <input type="text" placeholder="Address*" id="address"><br>
+        <select id="state" placeholder="State">
+            <option>select state</option>
+            <option value="Bihar">Bihar</option>
+            <option value="Rajashthan">Rajashthan</option>
+            <option value="Punjab">Punjab</option>
+            <option value="haryana">haryana</option>
+            <option value="Delhi">Delhi</option>
+            <option value="Maharashtra">Maharashtra</option>
+            <option value="Gujrat">Gujrat</option>
+            <option value="Tamilnadu">Tamilnadu</option>
+            <option value="Goa">Goa</option>
+            <option value="karnataka">karnataka</option>
+       </select><br>
+    <input type="text" placeholder="Enter your city" id="city"><br>
+    <input type="number" placeholder="Pincode*" id="pincode"><br>
+
+<div>
+<button onclick="Addaddress()" >Add</button>
+<a href="profile.html">Cancel</a>
+</div>
+     </form>
+
+</div> 
+
+
+        <div id="add_Education"> 
+          
+          <h1>Add Education</h1>
+          <form action="" onsubmit="updateEducation(event,`<%=user._id %>`)">
+            <label>level of Education*</label><br>
+            <select id="edu">
+                <option>Select level of Education*</option>
+             <option value="Graduation">Graduation</option>
+             <option value="diploma">Diploma</option>
+             <option value="X|| Equivalent">X||</option>
+             <option value="X Equivalent">X</option>
+             <option value="Certificate Course">Certificate Course</option>
+            </select><br>
+            
+           <label>Institution Name*</label><br>
+            <input type="text" name="Enter Your Institution Name" id="insname"><br>
+        <label>Degree*</label><br>
+        <input type="text" name="Enter Your Degree" id="degree"><br>
+        <label>Select Year*</label><br>
+        <select id="year">
+          <option >Select College Year</option>
+          <option value="First Year">First Year</option>
+          <option value="Second Year">Second Year</option>
+          <option value="Third Year">Third Year</option>
+          <option value="Forth Year">Forth Year</option>
+          <option value="Fifth Year">Fifth Year</option>
+        </select><br>
+           
+          <div>
+              <button onclick="addEducation()">UPDATE</button>
+              <a href="profile.html">Cancel</a>
+          </div>
+          </form>
+
+        
+</div> 
+<div id="footer">
+    <%- include('../partials/footer') %>
+</div>
+
+</body>
+</html>
+
+<script>
+
+let userdetails={
+  userid:window.userid.textContent,
+  usergen:window.usergen.textContent,
+  userfir:window.userfir.textContent,
+  userlast:window.userlast.textContent,
+  useremail:window.useremail.textContent,
+  usermobile:window.usermobile.textContent,
+}
+
+
+localStorage.setItem("user_info1",JSON.stringify(userdetails))
+
+
+
+let user_info1=JSON.parse(localStorage.getItem("user_info1"))
+// console.log(user_info1)
+
+function appenditeminleftdiv(){
+     let updiv = document.createElement("div");
+       updiv.setAttribute("id","updiv")
+     let image= document.createElement("img");
+         if(user_info1.usergen=="Male"){
+             image.src="https://assets.interntheory.com/creative/default-images/guyProfile.jpg"
+         }
+        else{
+     image.src="https://assets.interntheory.com/creative/default-images/girlProfile.jpg"
+        }
+
+       let btn = document.createElement("button");
+       btn.textContent ="GO TO DASHBOARD"
+        // btn.onclick =gotodashboard;
+       let p1=document.createElement("p");
+       p1.textContent =user_info1.userfir+ " "+user_info1.userlast;
+       let dndiv=document.createElement("div");
+       dndiv.setAttribute("id","dndiv")
+      let p2=document.createElement("p");
+       p2.textContent ="Email:"+" "+user_info1.useremail;
+
+       let p3=document.createElement("p");
+       p3.textContent ="Mobile:"+" "+user_info1.usermobile;
+
+       dndiv.append(p2,p3)
+  updiv.append(image,btn,p1)
+   document.getElementById("leftpicbox").append(updiv,dndiv)
+
+
+
+
+    }
+
+   appenditeminleftdiv();
+
+   function appenddiv1(){
+
+let imdv=document.createElement("div");
+imdv.setAttribute("id","imdv")
+let image= document.createElement("img");
+ if(user_info1.usergen=="Male"){
+     
+     image.src="https://assets.interntheory.com/creative/default-images/guyProfile.jpg"
+ }
+else{
+image.src="https://assets.interntheory.com/creative/default-images/girlProfile.jpg"
+}
+
+imdv.append(image)
+document.getElementById("d1").append(imdv);
+
+let txdv=document.createElement("div");
+txdv.setAttribute("id", "txdv");
+let p1=document.createElement("p");
+p1.textContent =user_info1.userfir+" "+user_info1.userlast;
+
+let btndv=document.createElement("div");
+btndv.setAttribute("id","btndv")
+let btndv1=document.createElement("div");
+ btndv1.setAttribute("id","btndv1")
+let span1=document.createElement("span");
+ span1.textContent="VIEW RESUME";
+ let span2=document.createElement("span");
+ span2.textContent="DOWNLOAD RESUME";
+
+ let btndv2=document.createElement("div");
+ btndv2.setAttribute("id","btndv2")
+ let span3=document.createElement("span");
+ span3.textContent="CHANGE PASSWORD";
+btndv1.append(span1,span2);
+
+btndv2.append(span3)
+btndv.append(btndv1,btndv2)
+
+txdv.append(p1,btndv);
+document.getElementById("d1").append(txdv);
+
+}
+
+appenddiv1();
+
+
+
+document.getElementById("upprsn").addEventListener("click",()=>{
+         document.getElementById("update_personal_details").style.visibility="visible";
+       });
+
+       document.getElementById("upadrs").addEventListener("click",()=>{
+         document.getElementById("update_address").style.visibility="visible";
+       })
+
+       document.getElementById("aded").addEventListener("click",()=>{
+         document.getElementById("add_Education").style.visibility="visible";
+       })
+
+function studentUpdate(e,id){
+    e.preventDefault()
+    // console.log(id)
+    async function updateProduct() {
+        // console.log("call or not")
+        let data = {
+          
+            first_Name:document.getElementById("fname").value,
+            last_name:document.getElementById("lname").value,
+            gender:document.getElementById("gender").value,
+            dob:document.getElementById("date").value,
+            language:document.getElementById("lang").value,
+            hobby:document.getElementById("hobby").value,
+            achivement:document.getElementById("achiev").value,
+            skill:document.getElementById("skill").value,
+            preference:document.getElementById("pref").value,
+            about:document.getElementById("des").value,
+            
+        }
+        let res = await fetch(`http://localhost:2345/login/${id}`, {
+            method: 'PATCH',
+            body: JSON.stringify(data),
+            headers: {
+                'Content-type': 'application/json'
+            }
+        })
+    }
+    updateProduct()
+    location.href=`/login/profile/${id}`
+
+    
+}
+
+function updateStudentAddress(e,id){
+    e.preventDefault()
+    // console.log(id)
+    async function updateProduct() {
+        // console.log("call or not")
+        let data = {
+             address:document.getElementById("address").value,
+             state:document.getElementById("state").value,
+             city: document.getElementById("city").value,
+             pin:document.getElementById("pincode").value,
+        }
+        let res = await fetch(`http://localhost:2345/login/${id}`, {
+            method: 'PATCH',
+            body: JSON.stringify(data),
+            headers: {
+                'Content-type': 'application/json'
+            }
+        })
+    }
+    updateProduct()
+    location.href=`/login/profile/${id}`
+
+    
+}
+
+function updateEducation(e,id){
+    e.preventDefault()
+    // console.log(id)
+
+    async function updateProduct() {
+        // console.log("call or not")
+        let data = {
+            leveledu:document.getElementById("edu").value,
+            institute:document.getElementById("insname").value,
+            degree:document.getElementById("degree").value,
+            selyear:document.getElementById("year").value,
+        }
+        let res = await fetch(`http://localhost:2345/login/${id}`, {
+            method: 'PATCH',
+            body: JSON.stringify(data),
+            headers: {
+                'Content-type': 'application/json'
+            }
+        })
+    }
+    updateProduct()
+    window.location.reload();
+    location.href=`/login/profile/${id}`
+    
+}
+
+</script>
+
+
+   
+<script type="module">
+
+    let user_info = JSON.parse(localStorage.getItem("user_info1"))
+    
+    import  {n12345,nbar12345 , afterLogout}  from '/js/navbar.js'
+    
+
+    if (user_info === null ) {
+        document.getElementById('nn123').innerHTML = nbar12345();
+    }
+    
+    else {
+    
+        document.getElementById('nn123').innerHTML = n12345(user_info.userid);
+    
+        let name = document.getElementById('name');
+            name.innerText = user_info.userfir + " " +user_info.userlast;
+    
+            let mail = document.getElementById('mail');
+            mail.innerText = user_info.useremail;
+            
+            let phno = document.getElementById('phno');
+            phno.innerHTML= user_info.usermobile;
+
+            let profile_img1 = document.getElementById('profile_img1');
+            let profile_img2 = document.getElementById('profile_img2');
+    
+    
+            afterLogout();
+            
+            if(user_info.usergen === "Male"){
+                profile_img1.src ="https://assets.interntheory.com/creative/default-images/guyProfile.jpg";
+                profile_img2.src ="https://assets.interntheory.com/creative/default-images/guyProfile.jpg";
+             }
+            else{
+                profile_img1.src ="https://assets.interntheory.com/creative/default-images/girlProfile.jpg";
+                profile_img2.src = "https://assets.interntheory.com/creative/default-images/girlProfile.jpg";
+            }
+    
+    
+    }
+    
+    
+    $('.btn').click(function () {
+            $(this).toggleClass("click");
+            $('.sidebar').toggleClass("show");
+        });
+    
+        $('.feat-btn').click(function () {
+            $('nav ul .feat-show').toggleClass("show");
+        });
+        $('.feat1-btn').click(function () {
+            $('nav ul .feat1-show').toggleClass("show1");
+        });
+        $('.feat2-btn').click(function () {
+            $('nav ul .feat2-show').toggleClass("show2");
+        });
+    
+    </script>
+    
